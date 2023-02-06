@@ -1,0 +1,92 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "next"
+  ],
+  "ignorePatterns": [
+    "public",
+    "types",
+    "node_modules",
+    "dist",
+    "bin",
+    "*.d.ts",
+    "*.config.js",
+    "*.setup.js"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "tsx": true
+    },
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks",
+    "prettier",
+    "simple-import-sort"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {
+        "project": ["./tsconfig.json"]
+      }
+    }
+  },
+  "rules": {
+    "func-names": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "react/no-array-index-key": "off",
+    "block-scoped-var": "warn",
+    "eqeqeq": ["warn", "smart"],
+    "no-var": "warn",
+    "prefer-const": "warn",
+    "eol-last": "warn",
+    "prefer-arrow-callback": "warn",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreDeclarationSort": true
+      }
+    ],
+    "import/default": "off",
+    "import/prefer-default-export": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling", "index"]
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": false
+        }
+      }
+    ],
+    "import/no-cycle": "off",
+    "linebreak-style": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-param-reassign": 0
+  }
+}
